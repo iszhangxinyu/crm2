@@ -25,18 +25,18 @@
         <!--<property name="mapperLocations" value="classpath:com/xinyu/crm/dao/*Mapper.xml"/>-->
         <property name="typeAliasesPackage" value="com.xinyu.crm.pojo"/>
     </bean>
-<!--
+    <!--
 
-    <bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.xinyu.crm.dao"/>
-    </bean>
--->
+        <bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+            <property name="basePackage" value="com.xinyu.crm.dao"/>
+        </bean>
+    -->
 
     <bean class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.xinyu.crm.dao"/>
         <property name="properties">
             <value>
-                mappers=tk.mybatis.mapper.common.Mapper
+                mappers=com.xinyu.crm.dao.BaseMapper
             </value>
         </property>
     </bean>
