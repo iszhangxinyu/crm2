@@ -1,5 +1,6 @@
 package com.xinyu.crm.pojo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import org.apache.ibatis.type.Alias;
 
@@ -29,6 +30,7 @@ public class Employee {
 
     private Long deptId;
 
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private Date inputtime;
 
     private Boolean state;

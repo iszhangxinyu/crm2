@@ -30,9 +30,12 @@ public class EmployeeController {
 
     @RequestMapping("login")
     @ResponseBody
-    public AJAXResult login(Employee employee, HttpServletRequest request) {
+    public AJAXResult login(String username, String password, HttpServletRequest request) {
         UserContext.set(request);
         AJAXResult result = null;
+        Employee employee = new Employee();
+        employee.setUsername(username);
+        employee.setPassword(password);
         Employee employee1 = employeeService.queryByLogin(employee);
         if (employee1 != null) {
             UserContext.get().getSession().setAttribute(UserContext.USER_IN_SESSION, employee);
@@ -50,6 +53,7 @@ public class EmployeeController {
     public PageResult<Employee> list(EmployeeQueryObject qo) {
         return employeeService.listPage(qo);
     }
+
 
 
 
