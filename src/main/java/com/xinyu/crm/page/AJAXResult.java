@@ -18,7 +18,7 @@ public class AJAXResult {
         this.message = message;
     }
 
-    public AJAXResult(boolean success) {
-        this.success = success;
+    public AJAXResult(String message) {
+        this.message = message;
     }
 }

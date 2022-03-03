@@ -1,4 +1,4 @@
-package com.xinyu.crm.dao;
+package com.xinyu.crm.mapper;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 测试通用Mapper
+ *
  * @author zhangxinyu
  * @version v1.0
  * @date created in 2022-03-03 11:26
@@ -29,7 +31,7 @@ public class EmployeeMapperTest {
     /**
      * 批量新增，需要在扫描器中配置，然后继承该接口
      * 属性为null也会插入
-     *
+     * <p>
      * insert into table () values (), (), ()
      */
     @Test
@@ -46,11 +48,11 @@ public class EmployeeMapperTest {
 
     /**
      * 批量删除
-     *DELETE FROM employee where id in (37,38,39)
+     * DELETE FROM employee where id in (37,38,39)
      */
     @Test
     public void deleteByIds() {
-        Long[]  ids = {37L,38L,39L};
+        Long[] ids = {37L, 38L, 39L};
         String s1 = StringUtils.join(ids, ",");
         employeeMapper.deleteByIds(s1);
     }
@@ -125,7 +127,12 @@ public class EmployeeMapperTest {
 
     @Test
     public void selectOne() {
-
+        // 根据条件查一个
+        Employee employee = new Employee();
+        employee.setRealname("zs4");
+        employee.setPassword("00000000");
+        employeeMapper.selectOne(employee);
+        System.out.println(employee);
     }
 
     @Test
@@ -151,7 +158,7 @@ public class EmployeeMapperTest {
     @Test
     public void selectByExample() {
         // 分页对象，只对紧接着的查询语句生效
-        PageHelper.startPage(1,2);
+        PageHelper.startPage(1, 2);
         // 查询条件构造对象
         Example example = new Example(Employee.class);
         // 条件对象
@@ -162,12 +169,14 @@ public class EmployeeMapperTest {
         example.orderBy("id").desc();
 
         // 开始查询
+
         List<Employee> employees = employeeMapper.selectByExample(example);
 
         // 转换为分页信息
         PageInfo<Employee> pageInfo = new PageInfo<>(employees);
         System.out.println("分页信息：总数量" + pageInfo.getTotal());
-        System.out.println("分页信息：总页数" + pageInfo.getPages());
+        System.out.println("分页信息：总页数" + pageInfo.getPages()
+        );
         System.out.println("分页信息：页码" + pageInfo.getPageNum());
         System.out.println("分页信息：页面size" + pageInfo.getPageSize());
 

@@ -1,4 +1,4 @@
-package com.xinyu.crm.dao;
+package com.xinyu.crm.mapper;
 
 import tk.mybatis.mapper.annotation.RegisterMapper;
 import tk.mybatis.mapper.common.Mapper;

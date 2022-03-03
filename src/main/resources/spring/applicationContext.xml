@@ -28,15 +28,15 @@
     <!--
 
         <bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-            <property name="basePackage" value="com.xinyu.crm.dao"/>
+            <property name="basePackage" value="com.xinyu.crm.mapper"/>
         </bean>
     -->
 
     <bean class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.xinyu.crm.dao"/>
+        <property name="basePackage" value="com.xinyu.crm.mapper"/>
         <property name="properties">
             <value>
-                mappers=com.xinyu.crm.dao.BaseMapper
+                mappers=com.xinyu.crm.mapper.BaseMapper
             </value>
         </property>
     </bean>

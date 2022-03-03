@@ -4,6 +4,7 @@ $(function () {
         employee_dialog_form = $("#employee_dialog_form"),
         employee_searchForm = $("#employee_searchForm"),
         employee_datagrid_bt = $("#employee_datagrid_bt a");
+
     employee_datagrid.datagrid({
         url: "/employee_list",
         fit: true,

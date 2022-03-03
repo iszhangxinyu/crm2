@@ -1,4 +1,4 @@
-package com.xinyu.crm.dao;
+package com.xinyu.crm.mapper;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -9,6 +9,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import javax.sql.DataSource;
 
 /**
+ * 测试spring集成MyBatis
+ *
  * @author zhangxinyu
  * @version v1.0
  * @date created in 2022-03-02 23:54

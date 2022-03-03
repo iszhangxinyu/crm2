@@ -19,15 +19,9 @@
 <%--数据表格--%>
 <table id="employee_datagrid"></table>
 <div id="employee_datagrid_bt">
-    <c:if test="${myfn:checkPermission('cn.xy.crm.web.controller.EmployeeController:save')}">
         <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:'true'" data-cmd="add">新增</a>
-    </c:if>
-    <c:if test="${myfn:checkPermission('cn.xy.crm.web.controller.EmployeeController:update')}">
         <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-edit',plain:'true'" data-cmd="edit">编辑</a>
-    </c:if>
-    <c:if test="${myfn:checkPermission('cn.xy.crm.web.controller.EmployeeController:delete')}">
         <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:'true'" data-cmd="delete">离职</a>
-    </c:if>
     <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-reload',plain:'true'" data-cmd="refresh">刷新</a>
     <br/>
     <div>
